@@ -3,7 +3,7 @@
 
 ### Essentials
 
-- [Intro](essentials/intro.md)
+- [Get Started](essentials/get_started.md)
 - [User interface](essentials/ui.md)
 - [Shortcuts](essentials/shortcuts.md)
 
