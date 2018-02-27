@@ -52,11 +52,29 @@ Click `Project - Export Textures`. Format, resolution and channels to export can
 
 # Materials
 
-Material nodes in ArmorPaint are based on Cycles nodes. When painting, brush applies a material onto the surface. To setup material, invoke node editor with `Project - Material - Nodes`. Use toolbar at the top to add new nodes. Use `x`/`backspace` key do delete existing nodes.
+Material nodes in ArmorPaint are based on Cycles nodes. When painting, brush applies a material onto the surface. To setup material, invoke node editor with `Project - Materials - Nodes`. Use toolbar at the top to add new nodes. Use `x`/`backspace` key do delete existing nodes.
 
 # Painting
 
-Configure brush parameters in `Project - Brush`. `Left mouse button` to paint.
+Configure brush parameters in `Project - Brushes`. `Left mouse button` to paint.
+
+## Bake Ambient Occlussion
+
+*Experimental:* Set `Brushes - Type` to `Bake AO` and click on the model in viewport to apply.
+
+# UI
+
+## Scaling
+
+*Experimental:* It is possible to scale up the user interface by editing the `config.arm` file placed alongside ArmorPaint binary. Edit `window_scale` entry to `2.0` or higher. Once stable, this option will be exposed directly in ArmorPaint.
+
+```
+{
+	...
+    "window_scale": 2.0,
+    ...
+}
+```
 
 <script>markdeepOptions={tocStyle:'medium'};</script>
 <!-- Markdeep: --><script src="markdeep.min.js?"></script>
