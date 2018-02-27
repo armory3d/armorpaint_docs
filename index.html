@@ -12,7 +12,7 @@ ArmorPaint is a stand-alone tool fully specialized in physically based texture p
 
 # Download
 
-Runs on **Windows, Linux and MacOS**.
+Runs on **Windows and Linux**.
 
 - [Get ArmorPaint](http://armorpaint.org/download.html)
 
@@ -36,7 +36,7 @@ Only the absolute basics are working. There is no undo, masking or layers yet. A
 
 ## Import Meshes
 
-Drag and drop unwrapped `.obj` file into the viewport. This will replace the currently painted mesh. Importing `.blend` and `.fbx` formats is in progress but not yet supported. Use Blender to do the conversion in the meantime.
+Drag and drop unwrapped `.obj`, `.fbx` or `.gltf` file into the viewport. This will replace the currently painted mesh. Importing `.blend` format is in progress but not yet supported. Use Blender to do the conversion in the meantime.
 
 ## Import Materials
 
@@ -44,7 +44,7 @@ Importing Cycles materials from `.blend` format is in progress but not yet suppo
 
 ## Import Textures
 
-Drag and drop `.jpg` or `.png` images into the node editor. This will import the image and create a new Image node.
+Drag and drop `.jpg`, `.png`, `.tga` or `.hdr` images into the node editor. This will import the image and create a new Image node.
 
 ## Export Textures
 
@@ -52,7 +52,7 @@ Click `Project - Export Textures`. Format, resolution and channels to export can
 
 # Materials
 
-Material nodes in ArmorPaint are based on Cycles nodes. When painting, brush applies a material onto the surface. To setup material, invoke node editor with `Project - Material - Edit`. Use toolbar at the top to add new nodes. Use `x` shortcut do delete existing nodes.
+Material nodes in ArmorPaint are based on Cycles nodes. When painting, brush applies a material onto the surface. To setup material, invoke node editor with `Project - Material - Nodes`. Use toolbar at the top to add new nodes. Use `x`/`backspace` key do delete existing nodes.
 
 # Painting
 
