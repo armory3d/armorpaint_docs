@@ -10,21 +10,23 @@ ArmorPaint is a stand-alone tool fully specialized in physically based texture p
 
 # Download
 
-Runs on **Windows and Linux**.
+Runs on **Windows** and **Linux**. **MacOS** builds are provided, but currently as unsigned app.
 
 - [Get ArmorPaint](http://armorpaint.org/download.html)
 
 ## Requirements
 
-As of now ArmorPaint is known to work on Intel HD5100 graphics card. For 8K/16K texture painting, GTX 1060/6GB or better is recommended.
+As of now ArmorPaint is known to work on Intel HD4000 graphics card. For 8K/16K texture painting, GTX 1060/6GB or better is recommended. ArmorPaint runs on the GPU and the performance mainly depends on a graphics card.
 
 ## Limitations
 
-Only the absolute basics are working. There is no undo, masking or layers yet. As the time goes, these issues will get resolved.
+Only the absolute basics are working. There is no undo or masking yet. As the time goes, these issues will get resolved.
 
 # Get Started
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5YIvj3yIP00?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jnsRWOFUsQs?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Controls
 
@@ -46,30 +48,61 @@ Drag and drop `.jpg`, `.png`, `.tga` or `.hdr` images into the node editor. This
 
 ## Export Textures
 
-Click `Project - Export Textures`. Format, resolution and channels to export can be configured in `Project - Properties`.
+Click `Export - Export Textures`. Format, resolution and channels to export can be configured.
 
 # Materials
 
-Material nodes in ArmorPaint are based on Cycles nodes. When painting, brush applies a material onto the surface. To setup material, invoke node editor with `Project - Materials - Nodes`. Use toolbar at the top to add new nodes. Use `x`/`backspace` key do delete existing nodes.
+Material nodes in ArmorPaint are based on Cycles nodes. When painting, brush applies a material onto the surface. To setup material, invoke node editor with `Tools - Material - Nodes`. Use toolbar at the top to add new nodes. Use `x`/`backspace` key do delete existing nodes.
 
 # Painting
 
-Configure brush parameters in `Project - Brushes`. `Left mouse button` to paint.
+## Draw
+
+Select `Draw` tool from toolbar. Configure brush parameters in `Tools - Draw`. `Left mouse button` to paint strokes.
+
+## Erase
+
+Select `Erase` tool from toolbar. Only strokes on the second layer can be erased currently.
+
+## Fill
+
+Select `Fill` tool from toolbar. `Left mouse button` to fill active layer with selected material.
 
 ## Bake Ambient Occlusion
 
-*Experimental:* Set `Brushes - Type` to `Bake AO` and click on the model in viewport to apply.
+*Experimental:* Select `Bake` tool from toolbar and click on a model in viewport to bake AO.
 
-# UI
+## Pick Color ID
+
+Select `Color ID` tool from toolbar. Drag and drop color-id texture onto the viewport and assign it into the `Color ID Map` field. Afterwards, click on a model to pick a specific color. All drawing operations will now be restricted to this color. Picked color can be removed with a `Clear` button.
+
+## Layers
+
+To create a new layer, click `Tools - Layers - New`. Brushes will be painted on the currently selected layer. Afterwards, layer can be deleted or applied to the base layer 1. Only two layers at once are supported as of now.
+
+# Preferences
 
 ## Scaling
 
-*Experimental:* It is possible to scale up the user interface by editing the `config.arm` file placed alongside ArmorPaint binary. Edit `window_scale` entry to `2.0` or higher. Once stable, this option will be exposed directly in ArmorPaint.
+*Experimental:* It is possible to scale up the user interface in `Preferences - UI Scale`. Once set, hit `Save` to remember the setting.
 
-```
+## Pen Pressure
+
+When painting with a pen, pressure affects the radius of brush.
+
+## Theming
+
+UI theme can be configured by editing the `theme.arm` file placed alongside the ArmorPaint binary. A proper theme editor will be provided in the future.
+
+# Plugins
+
+To enable plugins, edit the `config.arm` file placed alongside the ArmorPaint binary. A plugin filename can be entered into the `plugins` array. A proper plugin manager will be provided in the future.
+
+Plugins are written in JavaScript or WebAssembly. For a minimal example, see the bundled [plugin_hello.js](https://github.com/armory3d/armorpaint/blob/master/Bundled/plugin_hello.js) and [plugin_rotate.js](https://github.com/armory3d/armorpaint/blob/master/Bundled/plugin_rotate.js).
+
+```json
 {
 	...
-    "window_scale": 2.0,
-    ...
+	"plugins": ["plugin_hello.js"]
 }
 ```
