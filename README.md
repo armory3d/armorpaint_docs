@@ -36,7 +36,7 @@ Only the absolute basics are working. There is no undo or masking yet. As the ti
 
 ## Import Meshes
 
-Drag and drop unwrapped `.obj`, `.fbx` or `.gltf` file into the viewport. This will replace the currently painted mesh. Importing `.blend` format is in progress but not yet supported. Use Blender to do the conversion in the meantime.
+Drag and drop unwrapped `.obj` file into the viewport. This will replace the currently painted mesh. `.fbx` and `.gltf` files are also supported, but the importer is not 100% reliable yet and may fail. Importing `.blend` format is in progress but not yet supported. Use Blender to do the conversion in the meantime.
 
 ## Import Materials
 
