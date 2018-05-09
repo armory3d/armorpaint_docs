@@ -28,6 +28,14 @@ Only the absolute basics are working. There is no undo or masking yet. As the ti
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jnsRWOFUsQs?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+### Windows
+
+Run `ArmorPaint.exe`. In some cases, Windows may propt you with the [unrecognized app dialog](http://armorpaint.org/manual/img/startup_win.png) - press `More Info - Run Anyway`.
+
+### Linux
+
+Open terminal and run `./ArmorPaint`.
+
 ## Controls
 
 `Left mouse button` to paint. `Right mouse button` to rotate the mesh. `Mouse wheel` to zoom in and out.
