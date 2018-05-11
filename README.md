@@ -34,7 +34,7 @@ Run `ArmorPaint.exe`. In some cases, Windows may propt you with the [unrecognize
 
 ### Linux
 
-Open terminal and run `./ArmorPaint`.
+Open terminal in the extracted folder and run `./ArmorPaint`.
 
 ## Controls
 
