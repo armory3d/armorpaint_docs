@@ -24,7 +24,7 @@ Only one-step undo is supported and masking features are limited to color id map
 
 # Get Started
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5YIvj3yIP00?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OzRqXIsvahg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ### Windows
 
