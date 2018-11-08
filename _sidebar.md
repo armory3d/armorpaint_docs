@@ -1,3 +1,3 @@
-* Getting Started
+* Manual
 
   * [Home](/)
