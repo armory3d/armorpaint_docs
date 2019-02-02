@@ -82,7 +82,7 @@ Materials in ArmorPaint are composed with nodes. When painting, brush applies a 
 
 You can see the material preview instantly in the `Materials` panel as the nodes are assembled.
 
-*See [Import Materials](http://localhost:3000/#/?id=import-materials)*
+*See [Import Materials](http://armorpaint.org/manual/#/?id=import-materials)*
 
 # Painting
 
