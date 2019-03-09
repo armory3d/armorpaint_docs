@@ -1,3 +1,4 @@
+To preview the manual locally:
 https://docsify.js.org/#/quickstart
 
 ```
