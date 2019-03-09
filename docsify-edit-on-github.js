@@ -2,7 +2,8 @@
   win.EditOnGithubPlugin = {}
 
   function create(docBase, docEditBase, title) {
-    title = title || 'Edit on github'
+    // title = title || 'Edit on github'
+    title = title || ''
     docEditBase = docBase.replace(/\/blob\//, '/edit/')
 
     function editDoc(event, vm) {

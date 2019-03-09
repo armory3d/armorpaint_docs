@@ -2,7 +2,7 @@
 
 ![](img/title.jpg)
 
-ArmorPaint is an in-development software specialized in PBR texture painting of 3D models. Import geometry and start painting right away. A modern viewport provides instant visual feedback as you paint.
+ArmorPaint is an in-development software designed for physically-based texture painting. Drag & drop your 3D models and start painting. Receive instant visual feedback in the viewport as you paint.
 
 *The preview version has many rough edges and the experience may be frustrating.*
 
@@ -16,19 +16,19 @@ ArmorPaint is an in-development software specialized in PBR texture painting of 
 
 #### Requirements
 
-ArmorPaint runs on the GPU and the performance mainly depends on a graphics card. Recommended minimum for 4K painting is an Intel HD4000 graphics card. For 16K painting, GTX 1060/6GB or better is recommended.
+ArmorPaint runs on the GPU and the performance mainly depends on a graphics card. Minimum for 4K painting is an Intel HD4000 graphics card. For 16K painting, GTX 1060/6GB or better is recommended.
 
 # Get Started
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OzRqXIsvahg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0LrMx2mmWi0?rel=0" frameBorder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 #### Windows
 
-Unpack downloaded archive and run `ArmorPaint.exe`. In some cases, Windows may prompt you with the [unrecognized app dialog](http://armorpaint.org/manual/img/startup_win.png) - press `More Info - Run Anyway`.
+Unpack downloaded archive and run `ArmorPaint.exe`. In some cases, Windows may prompt you with the unrecognized app dialog - press `More Info - Run Anyway`.
 
 #### Linux
 
-Open terminal in the extracted folder and run `./ArmorPaint`.
+Unpack downloaded archive and run `ArmorPaint`. In some cases, you may need to open terminal in the extracted folder and run `./ArmorPaint`.
 
 #### macOS
 
