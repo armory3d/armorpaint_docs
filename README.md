@@ -2,7 +2,7 @@
 
 ![](img/title.jpg)
 
-ArmorPaint is an in-development software designed for physically-based texture painting. Drag & drop your 3D models and start painting. Receive instant visual feedback in the viewport as you paint.
+ArmorPaint is a stand-alone software designed for physically-based texture painting. Drag & drop your 3D models and start painting. Receive instant visual feedback in the viewport as you paint.
 
 *The preview version has many rough edges and the experience may be frustrating.*
 
@@ -10,13 +10,21 @@ ArmorPaint is an in-development software designed for physically-based texture p
 
 # Download
 
-**Windows** and **Linux** is recommended. An unsigned **macOS** build is also provided. ArmorPaint is a portable application with no installation, just unpack and run. Download size is ~6MB, ~15MB unpacked.
+**Windows** and **Linux** is recommended. An unsigned **macOS** build is also provided. ArmorPaint is a portable application with no installation, just unpack and run.
 
-- [Get ArmorPaint](http://armorpaint.org/download.html)
+[Get ArmorPaint](http://armorpaint.org/download.html)
 
 #### Requirements
 
-ArmorPaint runs on the GPU and the performance mainly depends on a graphics card. Minimum for 4K painting is an Intel HD4000 graphics card. For 16K painting, GTX 1060/6GB or better is recommended.
+Painting process in ArmorPaint runs on the GPU and the performance mainly depends on a graphics card. Minimum for 4K painting is an Intel HD4000 graphics card. For 16K painting, GTX 1060/6GB or better is recommended.
+
+*See [Preferences](http://armorpaint.org/manual/#/?id=preferences) to tune performance*
+
+<br/><br/><br/><br/><br/>
+
+
+
+
 
 # Get Started
 
@@ -37,14 +45,20 @@ Unpack downloaded archive and run `ArmorPaint`. In some cases, you may need to o
 #### Controls
 
 - `Left mouse button / Pen` to paint
-- `Right mouse button` to rotate the mesh
-- `Middle mouse button` to pan camera
+- `Right mouse button` to rotate the camera
+- `Middle mouse button` to pan the camera
 - `Mouse wheel` to zoom in and out
 - See `Preferences - Controls` for keyboard shortcuts
 
+<br/><br/><br/><br/><br/>
+
+
+
+
+
 # Workflow
 
-![](img/proj.jpg)
+![](img/d.jpg)
 
 You can download sample assets for testing [here](https://github.com/armory3d/armorpaint_samples/releases).
 
@@ -54,149 +68,273 @@ Drag and drop unwrapped `.obj` file into the viewport. This will replace the cur
 
 #### Import Materials
 
-Drag and drop a folder with PBR texture set onto the viewport. ArmorPaint will automatically create a new material from imported textures. Importing Cycles materials from `.blend` format is in progress but not yet supported.
+Drag and drop a folder with PBR texture set onto the viewport. ArmorPaint will recognize the file extensions and create a new material from imported textures.
 
 #### Import Textures
 
-Drag and drop `.jpg`, `.png`, `.tga` or `.hdr` images into the node editor. This will import the image and create a new `Image` node.
+Drag and drop `.jpg`, `.png`, `.tga` or `.hdr` images into the node editor. This will import the image and place a new `Image` node onto the canvas.
 
 #### Export Textures
 
-Click on the `File - Export - Export Textures` button. Format, resolution and channels to export can be configured.
+Click on the `Export tab - Export Textures` button. Format, resolution and channels to export can be configured.
 
 #### Export Mesh
 
-Export the currently loaded mesh into an `.obj` file. This is handy if you only have access to the project file. Click on the `File - Export - Export Mesh` button.
+Click on the `Export tab - Export Mesh` button to save the currently loaded mesh into an `.obj` file. This is handy if you only have access to the `.arm` project file.
 
 #### Save / Load Project
 
-Click on the `File - Project Save` button or hit `Ctrl + S` to save the currently opened project. Mesh, layers and materials will be saved into `.arm` project file.
+Click on the `File - Save` menu item (`Ctrl + S`) to save the currently opened project. Mesh, layers and materials will be saved into `.arm` project file.
 
 To open the project file, drag and drop `.arm` file onto the viewport.
 
+<br/><br/><br/><br/><br/>
+
+
+
+
+
 # Materials
 
-![](img/nodes.jpg)
+![](img/b.jpg)
 
-Materials in ArmorPaint are composed with nodes. When painting, brush applies a material onto the surface. To setup a material, open node editor by clicking `Tools - Material - Nodes` or hit `TAB`. Use toolbar at the top to add new nodes.
+Materials in ArmorPaint are composed with nodes. When painting, brush applies a material onto the surface. To setup a material, open node editor by clicking `Tools tab - Materials - Nodes` (`TAB`). Use toolbar at the top to add new nodes.
 
-You can see the material preview instantly in the `Materials` panel as the nodes are assembled.
+The material preview is displayed instantly in the `Materials` panel as the nodes are assembled.
 
 *See [Import Materials](http://armorpaint.org/manual/#/?id=import-materials)*
 
-# Painting
+<br/><br/><br/><br/><br/>
 
-![](img/paint.jpg)
 
-#### Draw
 
-![](img/brush_draw.png)
 
-Select `Draw` tool from toolbar. Configure brush parameters in `Tools - Draw`. Press `Left mouse button` to paint strokes.
 
-**Sticker**
+# Tools
 
-Set `Paint` combo property located in `Tools - Draw` to `Sticker`. `Left mouse button` to project stickers onto surface.
+![](img/a.jpg)
 
-#### Erase
+#### Brush
 
-![](img/brush_erase.png)
+![](img/tool_draw.png)
 
-Select `Erase` tool from toolbar. Only strokes on the second layer or higher can be erased.
+Select `Brush`(`B`) tool from toolbar. Configure brush parameters in the header. Use `left mouse button` / `pen` to paint strokes using the selected material.
+
+- `Radius`: Brush size. (Hold `F` key and move the mouse / pen to the left / right.)
+- `UV Scale`: Scale the coords for currently painted material.
+- `UV Rotate`: Rotate the coords for currently painted material.
+- `Opacity`: Overall opacity of the brush stroke.
+- `Hardness`: Fade opacity towards the brush stroke edge.
+
+#### Eraser
+
+![](img/tool_eraser.png)
+
+Select `Eraser`(`E`) tool from toolbar. Use `left mouse button` / `pen` to erase strokes on the currently selected layer.
+
+- `Radius`: Brush size. (Hold `F` key and move the mouse / pen to the left / right.)
+- `Opacity`: Overall opacity of the brush stroke.
+- `Hardness`: Fade opacity towards the brush stroke edge.
 
 #### Fill
 
-![](img/brush_fill.png)
+![](img/tool_fill.png)
 
-Select `Fill` tool from toolbar. `Left mouse button` to fill active object and layer with selected material.
+Select `Fill`(`G`) tool from toolbar. Press `left mouse button` / `pen` to fill active layer with selected material. Fill tool respects active object mask, material mask and color id mask.
+
+- `UV Scale`: Scale the coords for currently painted material.
+- `UV Rotate`: Rotate the coords for currently painted material.
+- `Opacity`: Overall opacity of the fill effect.
+- `Fill Mode`: Allows to fill individual mesh faces.
 
 **Auto-Fill**
 
 Enable this option to perform a fill instantly as you change the material. This is useful to quickly preview material on target surface.
 
-#### Bake Ambient Occlusion
+#### Decal
 
-![](img/brush_bake.png)
+![](img/tool_decal.png)
 
-Select `Bake` tool from toolbar and click on a model in viewport to bake AO. Strength, radius and offset can be configured. Afterwards, you can prevent the occlusion texture from being painted on by disabling it in the `Paint Maps` panel.
+Select `Decal`(`D`) tool from toolbar. Press `left mouse button` / `pen` to apply active material as a decal onto the surface.
 
-#### Pick Color ID
+- `Radius`: Decal size. (Hold `F` key and move the mouse / pen to the left / right.)
+- `UV Scale`: Scale the coords for currently painted material.
+- `UV Rotate`: Rotate the coords for currently painted material.
+- `Opacity`: Overall opacity of the decal.
+- `Mask`: Apply shape mask to the decal.
 
-![](img/brush_colorid.png)
+#### Text
 
-Select `Color ID` tool from toolbar. Drag and drop color-id texture onto the viewport and assign it into the `Color ID Map` field. Afterwards, click on a model to pick a specific color. All drawing operations will now be restricted to this color. Picked color can be removed with a `Clear` button.
+![](img/tool_text.png)
 
-#### Painting height
+Select `Text`(`T`) tool from toolbar. Press `left mouse button` / `pen` to apply active material as a text onto the surface. Drag and drop a `.ttf` file into the viewport to change the font.
 
-Select `Draw` tool from toolbar. Enable `Height` checkbox located in `Tools - Paint Maps` panel. Afterwards, `Height` socket exposed in material node editor will take effect.
+- `Radius`: Text size. (Hold `F` key and move the mouse / pen to the left / right.)
+- `UV Scale`: Scale the coords for currently painted material.
+- `UV Rotate`: Rotate the coords for currently painted material.
+- `Opacity`: Overall opacity of the text.
+- `Font`: Select which font to apply.
+- `Text`: Type a text to apply.
+
+#### Clone
+
+![](img/tool_clone.png)
+
+Select `Clone`(`L`) tool from toolbar. Hold `ALT` to set clone source location. Use `left mouse button` / `pen` to clone the material from source location to active location.
+
+- `Radius`: Brush size. (Hold `F` key and move the mouse / pen to the left / right.)
+- `Opacity`: Overall opacity of the brush stroke.
+
+#### Blur
+
+![](img/tool_blur.png)
+
+Select `Blur`(`U`) tool from toolbar. Use `left mouse button` / `pen` to smudge the material applied to the surface.
+
+- `Radius`: Brush size. (Hold `F` key and move the mouse / pen to the left / right.)
+- `Opacity`: Overall opacity of the brush stroke.
+
+#### Particle
+
+![](img/tool_particle.png)
+
+Select `Particle`(`P`) tool from toolbar. Use `left mouse button` / `pen` to apply particles onto the surface.
+
+- `Radius`: Particle emitter size. (Hold `F` key and move the mouse / pen to the left / right.)
+- `Opacity`: Overall opacity of the emitted particle.
+
+#### Bake
+
+![](img/tool_bake.png)
+
+Select `Bake`(`K`) tool from toolbar.
+
+**AO**
+
+Press `left mouse button` / `pen` to bake ambient occlusion. Strength, radius and offset can be configured. Afterwards, you can prevent the occlusion channel from being painted on by disabling it in the `Paint Maps` panel.
+
+#### Color ID
+
+![](img/tool_colorid.png)
+
+Select `Color ID`(`C`) tool from toolbar. Drag and drop color-id texture onto the viewport and assign it into the `Color ID Map` field. Afterwards, click on a model to pick a specific color. All drawing operations will now be restricted to this color. Picked color can be removed with a `Clear` button.
+
+<br/><br/><br/><br/><br/>
+
+
+
+
+
+# Painting
+
+![](img/c.jpg)
 
 #### Paint Maps
 
-This panel allows to set which textures can be painted on.
+This panel allows to restrict which channels can be painted on.
+
+#### Painting Height
+
+Enable `Height` in `Tools tab - Paint Maps` panel. `Height` socket exposed in material node editor will now take effect when painting.
 
 #### Layers
 
-To create a new layer, click `Tools - Layers - New`. Brush will paint on the currently selected layer. Afterwards, layer can be deleted or applied to the base layer 1.
+To create a new layer, click `Tools tab - Layers - New`. Brush will paint on the currently selected layer. Afterwards, layer can be deleted or applied to the base layer.
 
 #### Objects
 
 If you import a geometry containing multiple objects, you can list them in the `Objects` panel. Set `Mask` property to `Object` to restrict painting to selected object only.
 
-Objects are assumed to be using a single UV map for now. `.obj` format is recommended for multi-object support.
+Objects are assumed to be using a single UV map for now. Per-object UV maps will be supported soon.
 
 #### 2D View
 
-Click `Layers - 2D View` to show the texture of the selected layer. The 2D View is updated immediately as you paint. In the top panel, you can select which texture to show or display UV map.
+Click `Layers - 2D View` to show the channels of the selected layer. The 2D View is updated immediately as you paint. In the top bar, you can select which channel to show or display UV map as a wireframe.
 
 #### Camera
 
 Set camera type and parameters.
 
-- `ArcBall` - rotate mesh around the origin
+- `Rotate` - rotate mesh around the origin
 - `Orbit` - rotate camera around the mesh
-- `Fly` - move camera freely using the `WASD` keys
+- `Fly` - hold `right mouse button` and move camera freely using the `WASD` and `QE` keys
 
 #### Viewport
 
-- Set light and environment intensity
-- Set specific texture channel to show in the viewport
-- Based on imported model, you can flip `Up Axis` to `Y` or `Z`
+- Set `Light` and `Environment` intensity
+- Set `Light Size`
+- Display specific channel in the viewport
+- Flip `Up Axis` of the imported model
 - Enable `Show Envmap` to draw environment map in the viewport
-- *Experimental:* You can drag and drop 2K `.hdr` file onto the viewport to change the environment map
+- Drag and drop a `.hdr` file onto the viewport to change the environment map
+- Show `Wireframe` in the viewport
+- Show 3D `Compass` in the viewport
+
+<br/><br/><br/><br/><br/>
+
+
+
+
+
+# Workspaces
+
+![](img/e.jpg)
+
+Select workspace from the header bar:
+- `Paint`: Texture painting
+- `Scene`: Scene composition
+- `Material`: Node-based material creation
+
+<br/><br/><br/><br/><br/>
+
+
+
+
 
 # Preferences
 
-![](img/prefs.jpg)
-
 #### UI Scale
 
-When running on high-resolution display, scale up the user interface in `Preferences - UI Scale`.
+Scale up the user interface when running on high-resolution display.
 
 #### Layout
 
-User interface can be displayed either on the left or right side.
+Pin properties window to the left or right side.
 
-#### Theming
+#### Theme
 
-Theme can be tweaked by editing the `theme.arm` file placed in the `data` folder. A proper theme editor will be provided in the future.
+Select `Dark` or `Light` theme. Theme can be tweaked by editing the `theme_dark.arm` file placed in the `/data` folder. A proper theme editor will be provided in the future.
+
+#### Undo Steps
+
+Set the number of undo steps to preserve. Using less undo steps may improve performance when running on GPU with constrained memory.
 
 #### Pen Pressure
 
 When painting with a pen, pressure affects the radius of brush.
 
-#### Undo Steps
-
-Sets the number of undo steps to preserve. Using less undo steps may improve performance when running on slower GPU with constrained memory.
-
 #### Viewport
 
-Configure viewport effects. On faster GPUs, raise the shadows quality or set super-samling to 2.0x for improved anti-aliasing. On slower GPUs, disable SSAO, shadows or set super-sampling to 0.5x for improved performance.
+Configure viewport quality.
+
+On faster GPUs:
+- Raise `Super Sample` to 2X/4X for improved anti-aliasing
+- Enable `Voxel AO` for cone-traced ambient occlusion and shadows
+
+On slower GPUs:
+- Disable `SSAO` for improved performance
+
+<br/><br/><br/><br/><br/>
+
+
+
+
 
 # Plugins
 
-To enable plugins, edit the `config.arm` file placed in the `data` folder. A plugin filename can be entered into the `plugins` array. A proper plugin manager will be provided in the future.
+To enable plugins, edit the `config.arm` file placed in the `/data` folder. A plugin filename can be entered into the `plugins` array. A proper plugin manager will be provided in the future.
 
-Plugins are written in JavaScript or WebAssembly. For a minimal example, see the bundled [plugin_hello.js](https://github.com/armory3d/armorpaint/blob/master/Bundled/plugin_hello.js) and [plugin_rotate.js](https://github.com/armory3d/armorpaint/blob/master/Bundled/plugin_rotate.js) located in the `data` folder.
+Plugins are written in JavaScript or WebAssembly. For a minimal example, see the bundled [plugin_hello.js](https://github.com/armory3d/armorpaint/blob/master/Bundled/plugins/plugin_hello.js) and [plugin_rotate.js](https://github.com/armory3d/armorpaint/blob/master/Bundled/plugins/plugin_rotate.js) files located in the `/data` folder.
 
 ```json
 {
