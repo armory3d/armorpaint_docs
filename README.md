@@ -219,6 +219,15 @@ Press `left mouse button` / `pen` to bake ambient occlusion. Strength, radius an
 
 Select `Color ID`(`C`) tool from toolbar. Drag and drop color-id texture onto the viewport and assign it into the `Color ID Map` field. Afterwards, click on a model to pick a specific color. All drawing operations will now be restricted to this color. Picked color can be removed with a `Clear` button.
 
+#### Picker
+
+![](img/tool_picker.png)
+
+Select `Picker`(`V`) tool from toolbar. Press `left mouse button` / `pen` to read material values from the surface. Base color, normal, occlusion, roughness and metallic values will be displayed in the header.
+
+- `Select Material`: When enabled, the material you pick from the mesh surface will also get auto-selected in the material shelf.
+- `Mask`: When set to `Material`, all drawing operations will be restricted to the surface where picked material is painted.
+
 <br/><br/><br/><br/><br/>
 
 
