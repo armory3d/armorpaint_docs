@@ -48,7 +48,7 @@ Unpack downloaded archive and run `ArmorPaint`. In some cases, you may need to o
 - `Right mouse button` to rotate the camera
 - `Middle mouse button` to pan the camera
 - `Mouse wheel` to zoom in and out
-- See `Preferences - Controls` for keyboard shortcuts
+- See `Preferences tab - Controls` for keyboard shortcuts
 
 <br/><br/><br/><br/><br/>
 
@@ -76,11 +76,11 @@ Drag and drop `.jpg`, `.png`, `.tga` or `.hdr` images into the node editor. This
 
 #### Export Textures
 
-Click on the `Export tab - Export Textures` button. Format, resolution and channels to export can be configured.
+Click on the `Export tab - Export Textures - Export` button. Format, resolution and channels to export can be configured.
 
 #### Export Mesh
 
-Click on the `Export tab - Export Mesh` button to save the currently loaded mesh into an `.obj` file. This is handy if you only have access to the `.arm` project file.
+Click on the `Export tab - Export Mesh - Export` button to save the currently loaded mesh into an `.obj` file. This is handy if you only have access to the `.arm` project file.
 
 #### Save / Load Project
 
@@ -98,9 +98,9 @@ To open the project file, drag and drop `.arm` file onto the viewport.
 
 ![](img/b.jpg)
 
-Materials in ArmorPaint are composed with nodes. When painting, brush applies a material onto the surface. To setup a material, open node editor by clicking `Tools tab - Materials - Nodes` (`TAB`). Use toolbar at the top to add new nodes.
+Materials in ArmorPaint are composed with nodes. When painting, brush applies a material onto the surface. To setup a material, open node editor by clicking `Materials tab - Nodes` (`TAB`). Use toolbar at the top to add new nodes.
 
-The material preview is displayed instantly in the `Materials` panel as the nodes are assembled.
+The material preview is displayed instantly in the `Materials tab` as the nodes are assembled.
 
 *See [Import Materials](http://armorpaint.org/manual/#/?id=import-materials)*
 
@@ -225,7 +225,7 @@ Select `Color ID`(`C`) tool from toolbar. Drag and drop color-id texture onto th
 
 Select `Picker`(`V`) tool from toolbar. Press `left mouse button` / `pen` to read material values from the surface. Base color, normal, occlusion, roughness and metallic values will be displayed in the header.
 
-- `Select Material`: When enabled, the material you pick from the mesh surface will also get auto-selected in the material shelf.
+- `Select Material`: When enabled, the material you pick from the mesh surface will also get auto-selected in the `Materials tab`.
 - `Mask`: When set to `Material`, all drawing operations will be restricted to the surface where picked material is painted.
 
 <br/><br/><br/><br/><br/>
@@ -238,31 +238,17 @@ Select `Picker`(`V`) tool from toolbar. Press `left mouse button` / `pen` to rea
 
 ![](img/c.jpg)
 
-#### Paint Maps
-
-This panel allows to restrict which channels can be painted on.
-
-#### Painting Height
-
-Enable `Height` in `Tools tab - Paint Maps` panel. `Height` socket exposed in material node editor will now take effect when painting.
-
 #### Layers
 
-To create a new layer, click `Tools tab - Layers - New`. Brush will paint on the currently selected layer. Afterwards, layer can be deleted or applied to the base layer.
-
-#### Objects
-
-If you import a geometry containing multiple objects, you can list them in the `Objects` panel. Set `Mask` property to `Object` to restrict painting to selected object only.
-
-Objects are assumed to be using a single UV map for now. Per-object UV maps will be supported soon.
+To create a new layer, click `Layers tab - New`. Brush will paint on the currently selected layer. Afterwards, layer can be deleted or applied to the base layer by right-clicking on it.
 
 #### 2D View
 
-Click `Layers - 2D View` to show the channels of the selected layer. The 2D View is updated immediately as you paint. In the top bar, you can select which channel to show or display UV map as a wireframe.
+Click `Layers tab - 2D View` to show the channels of the selected layer. The 2D View is updated immediately as you paint. In the top bar, you can select which channel to show or display UV map as a wireframe.
 
 #### Camera
 
-Set camera type and parameters.
+Set camera type and parameters in the status bar.
 
 - `Rotate` - rotate mesh around the origin
 - `Orbit` - rotate camera around the mesh
@@ -322,9 +308,7 @@ Set the number of undo steps to preserve. Using less undo steps may improve perf
 
 When painting with a pen, pressure affects the radius of brush.
 
-#### Viewport
-
-Configure viewport quality.
+#### Viewport Quality
 
 On faster GPUs:
 - Raise `Super Sample` to 2X/4X for improved anti-aliasing
