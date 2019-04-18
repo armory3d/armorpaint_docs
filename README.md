@@ -48,7 +48,7 @@ Unpack downloaded archive and run `ArmorPaint`. In some cases, you may need to o
 - `Right mouse button` to rotate the camera
 - `Middle mouse button` to pan the camera
 - `Mouse wheel` to zoom in and out
-- See `Preferences tab - Controls` for keyboard shortcuts
+- See button tooltips and `Preferences tab - Controls` for keyboard shortcuts
 
 <br/><br/><br/><br/><br/>
 
@@ -66,6 +66,10 @@ You can download sample assets for testing [here](https://github.com/armory3d/ar
 
 Drag and drop unwrapped `.obj` file into the viewport. This will replace the currently painted mesh. `.fbx`, `.blend` and `.gltf` files are supported, but the importer is not 100% reliable yet.
 
+- Enable `Meshes tab - UDIM Import` if you wish to split imported mesh per UDIM tile.
+- Normals can be re-calculated with `Meshes tab - Calculate Normals`.
+- Up axis can be set with `Meshes tab - Up Axis`.
+
 #### Import Materials
 
 Drag and drop a folder with PBR texture set onto the viewport. ArmorPaint will recognize the file extensions and create a new material from imported textures.
@@ -76,7 +80,7 @@ Drag and drop `.jpg`, `.png`, `.tga` or `.hdr` images into the node editor. This
 
 #### Export Textures
 
-Click on the `Export tab - Export Textures - Export` button. Format, resolution and channels to export can be configured.
+Click on the `Export tab - Export Textures - Export` button. Selected layer will get exported into textures. Format, resolution and channels to export can be configured.
 
 #### Export Mesh
 
@@ -101,6 +105,8 @@ To open the project file, drag and drop `.arm` file onto the viewport.
 Materials in ArmorPaint are composed with nodes. When painting, brush applies a material onto the surface. To setup a material, open node editor by clicking `Materials tab - Nodes` (`TAB`). Use toolbar at the top to add new nodes.
 
 The material preview is displayed instantly in the `Materials tab` as the nodes are assembled.
+
+Right-clicking onto the material preview allows to set which channels the material should affect.
 
 *See [Import Materials](http://armorpaint.org/manual/#/?id=import-materials)*
 
@@ -146,10 +152,6 @@ Select `Fill`(`G`) tool from toolbar. Press `left mouse button` / `pen` to fill 
 - `UV Rotate`: Rotate the coords for currently painted material.
 - `Opacity`: Overall opacity of the fill effect.
 - `Fill Mode`: Allows to fill individual mesh faces.
-
-**Auto-Fill**
-
-Enable this option to perform a fill instantly as you change the material. This is useful to quickly preview material on target surface.
 
 #### Decal
 
@@ -240,11 +242,26 @@ Select `Picker`(`V`) tool from toolbar. Press `left mouse button` / `pen` to rea
 
 #### Layers
 
-To create a new layer, click `Layers tab - New`. Brush will paint on the currently selected layer. Afterwards, layer can be deleted or applied to the base layer by right-clicking on it.
+To create a new layer, press `Layers tab - New`. Brush will paint onto the currently selected layer.
+- Layer can be parented to the specific object by setting the `Object` combo property.
+- Reveal the layer properties by clicking the `+` sign to set layer `opacity`.
+
+Right-click on the layer to expose layer operations:
+- Convert layer to `fill layer` or `paint layer`.
+- Create a `mask`.
+- `Merge` the layer down.
+- `Duplicate` the layer.
+- `Move` the layer up or down.
+- `Delete` layer.
+- Set which channels the layer should affect.
+
+*Note: Operations for the base (first) layer are restricted.*
 
 #### 2D View
 
 Click `Layers tab - 2D View` to show the channels of the selected layer. The 2D View is updated immediately as you paint. In the top bar, you can select which channel to show or display UV map as a wireframe.
+
+The paint tools are also usable directly inside the `2D View`.
 
 #### Camera
 
@@ -254,15 +271,17 @@ Set camera type and parameters in the status bar.
 - `Orbit` - rotate camera around the mesh
 - `Fly` - hold `right mouse button` and move camera freely using the `WASD` and `QE` keys
 
+Press `menu bar - View` to set specific camera viewpoint.
+
 #### Viewport
 
 - Set `Light` and `Environment` intensity
 - Set `Light Size`
 - Display specific channel in the viewport
-- Flip `Up Axis` of the imported model
 - Enable `Show Envmap` to draw environment map in the viewport
 - Drag and drop a `.hdr` file onto the viewport to change the environment map
 - Show `Wireframe` in the viewport
+- Show ruler `Grid` in the viewport
 - Show 3D `Compass` in the viewport
 
 <br/><br/><br/><br/><br/>
@@ -288,34 +307,20 @@ Select workspace from the header bar:
 
 # Preferences
 
-#### UI Scale
+- `UI Scale`: Scale up the user interface when running on high-resolution display.
+- `Layout`: Pin properties window to the left or right side.
+- `Theme`: Select `Dark` or `Light` theme. Theme can be tweaked by editing the `theme_dark.arm` file placed in the `/data` folder. A proper theme editor will be provided in the future.
+- `Undo Steps`: Set the number of undo steps to preserve. Using less undo steps may improve performance when running on GPU with constrained memory.
+- `Pen Pressure`: When painting with a pen, pressure affects the radius of brush.
 
-Scale up the user interface when running on high-resolution display.
-
-#### Layout
-
-Pin properties window to the left or right side.
-
-#### Theme
-
-Select `Dark` or `Light` theme. Theme can be tweaked by editing the `theme_dark.arm` file placed in the `/data` folder. A proper theme editor will be provided in the future.
-
-#### Undo Steps
-
-Set the number of undo steps to preserve. Using less undo steps may improve performance when running on GPU with constrained memory.
-
-#### Pen Pressure
-
-When painting with a pen, pressure affects the radius of brush.
-
-#### Viewport Quality
+##### Viewport Quality
 
 On faster GPUs:
-- Raise `Super Sample` to 2X/4X for improved anti-aliasing
-- Enable `Voxel AO` for cone-traced ambient occlusion and shadows
+- Raise `Super Sample` to 2X/4X for improved anti-aliasing.
+- Enable `Voxel AO` for cone-traced ambient occlusion and shadows.
 
 On slower GPUs:
-- Disable `SSAO` for improved performance
+- Disable `SSAO` for improved performance.
 
 <br/><br/><br/><br/><br/>
 
