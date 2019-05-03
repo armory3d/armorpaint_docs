@@ -131,6 +131,9 @@ Select `Brush`(`B`) tool from toolbar. Configure brush parameters in the header.
 - `UV Rotate`: Rotate the coords for currently painted material.
 - `Opacity`: Overall opacity of the brush stroke.
 - `Hardness`: Fade opacity towards the brush stroke edge.
+- `X-Ray`: Paint through mesh faces.
+- `Mirror`: Mirror brush strokes horizontally in screen-space.
+- `Symmetry`: Mirror brush strokes on the X, Y and/or Z axis.
 
 #### Eraser
 
