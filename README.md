@@ -44,11 +44,11 @@ Unpack downloaded archive and run `ArmorPaint`. In some cases, you may need to o
 
 #### Controls
 
-- `Left mouse button / Pen` to paint
-- `Right mouse button` to rotate the camera
-- `Middle mouse button` to pan the camera
-- `Mouse wheel` to zoom in and out
-- See button tooltips and `Preferences tab - Controls` for keyboard shortcuts
+- `Left mouse button / Pen` to paint.
+- `Right mouse button` to rotate the camera.
+- `Middle mouse button` to pan the camera.
+- `Mouse wheel` to zoom in and out.
+- See button tooltips and `Preferences tab - Controls` for keyboard shortcuts.
 
 <br/><br/><br/><br/><br/>
 
@@ -74,13 +74,21 @@ Drag and drop unwrapped `.obj` file into the viewport. This will replace the cur
 
 Drag and drop a folder with PBR texture set onto the viewport. ArmorPaint will recognize the file extensions and create a new material from imported textures.
 
+Click on the `Materials tab - Import` button to import materials from other ArmorPaint (`.arm`) projects or `.blend` files (experimental). 
+
 #### Import Textures
 
 Drag and drop `.jpg`, `.png`, `.tga` or `.hdr` images into the node editor. This will import the image and place a new `Image` node onto the canvas.
 
 #### Export Textures
 
-Click on the `Export tab - Export Textures - Export` button. Selected layer will get exported into textures. Format, resolution and channels to export can be configured.
+Click on the `Export tab - Export Textures - Export` button.
+
+- `Layers`: Export all visible layers or selected layers only into textures.
+- `Format`: `.jpg` or `.png`.
+- `Channels`: Specify maps to export into textures.
+- `Output`: Generic PBR maps or packed ORM format for UE4.
+- `Project quality`: Set texture resolution.
 
 #### Export Mesh
 
@@ -90,7 +98,9 @@ Click on the `Export tab - Export Mesh - Export` button to save the currently lo
 
 Click on the `File - Save` menu item (`Ctrl + S`) to save the currently opened project. Mesh, layers and materials will be saved into `.arm` project file.
 
-To open the project file, drag and drop `.arm` file onto the viewport.
+To open the project file, drag and drop `.arm` file onto the viewport. `.arm` files can be set to open directly with ArmorPaint from the OS file explorer.
+
+`.obj` and other asset types can also be associated if you wish to use ArmorPaint as a model / texture viewer.
 
 <br/><br/><br/><br/><br/>
 
@@ -102,11 +112,18 @@ To open the project file, drag and drop `.arm` file onto the viewport.
 
 ![](img/b.jpg)
 
-Materials in ArmorPaint are composed with nodes. When painting, brush applies a material onto the surface. To setup a material, open node editor by clicking `Materials tab - Nodes` (`TAB`). Use toolbar at the top to add new nodes.
+Materials in ArmorPaint are composed with nodes. When painting, brush applies a material onto the surface. To compose a material, open node editor by clicking `Materials tab - Nodes` (`TAB`).
+- Use toolbar at the top to add new nodes.
+- Drag textures from `Textures` tab into the node editor to create `Image` nodes.
 
-The material preview is displayed instantly in the `Materials tab` as the nodes are assembled.
+Material preview is displayed instantly in the `Materials tab` as the nodes are assembled.
 
-Right-clicking onto the material preview allows to set which channels the material should affect.
+Right-click onto material preview to expose material operations:
+- Set which channels the material should affect.
+- Delete material.
+
+Implemented material nodes:
+`Attribute`, `Camera data`, `Fresnel`, `Geometry`, `Layer Weight`, `Object Info`, `RGB`, `Tangent`, `Texture Coord`, `UV Map`, `Value`, `Brick Texture`, `Checker Texture`, `Gradient Texture`, `Image Texture`, `Magic Texture`, `Musgrave Texture`, `Noise Texture`, `Voronoi Texture`, `Wave Texture`, `BrightContrast`, `Gamma`, `HueSatVal`, `Invert`, `MixRGB`, `Vector`, `Bump`, `Mapping`, `Vector Curves`, `Color Ramp`, `Combine HSV`, `Combine RGB`, `Combine XYZ`, `Math`, `RGB to BW`, `Separate HSV`, `Separate RGB`, `Separate XYZ`, `Vector Math` 
 
 *See [Import Materials](http://armorpaint.org/manual/#/?id=import-materials)*
 
@@ -131,6 +148,9 @@ Select `Brush`(`B`) tool from toolbar. Configure brush parameters in the header.
 - `UV Rotate`: Rotate the coords for currently painted material.
 - `Opacity`: Overall opacity of the brush stroke.
 - `Hardness`: Fade opacity towards the brush stroke edge.
+- `Bias`: Stretch brush stroke on the uv map to prevent seams.
+- `Blending`: Blending mode used for painting.
+- `TexCoord`: Coordinates used for texture sampling. Mesh `UV Map`, `Project` from view or `Triplanar` mapping.
 - `X-Ray`: Paint through mesh faces.
 - `Mirror`: Mirror brush strokes horizontally in screen-space.
 - `Symmetry`: Mirror brush strokes on the X, Y and/or Z axis.
@@ -141,9 +161,14 @@ Select `Brush`(`B`) tool from toolbar. Configure brush parameters in the header.
 
 Select `Eraser`(`E`) tool from toolbar. Use `left mouse button` / `pen` to erase strokes on the currently selected layer.
 
-- `Radius`: Brush size. (Hold `F` key and move the mouse / pen to the left / right.)
-- `Opacity`: Overall opacity of the brush stroke.
-- `Hardness`: Fade opacity towards the brush stroke edge.
+- `Radius`: Eraser size. (Hold `F` key and move the mouse / pen to the left / right.)
+- `Opacity`: Overall opacity of the eraser stroke.
+- `Hardness`: Fade opacity towards the eraser stroke edge.
+- `Bias`: Stretch eraser stroke on the uv map to prevent seams.
+- `Blending`: Blending mode used for erasing.
+- `X-Ray`: Erase through mesh faces.
+- `Mirror`: Mirror eraser strokes horizontally in screen-space.
+- `Symmetry`: Mirror eraser strokes on the X, Y and/or Z axis.
 
 #### Fill
 
@@ -154,6 +179,9 @@ Select `Fill`(`G`) tool from toolbar. Press `left mouse button` / `pen` to fill 
 - `UV Scale`: Scale the coords for currently painted material.
 - `UV Rotate`: Rotate the coords for currently painted material.
 - `Opacity`: Overall opacity of the fill effect.
+- `Bias`: Stretch fill effect on the uv map to prevent seams.
+- `Blending`: Blending mode used for fill effect.
+- `TexCoord`: Coordinates used for texture sampling. Mesh `UV Map`, `Project` from view or `Triplanar` mapping.
 - `Fill Mode`: Allows to fill individual mesh faces.
 
 #### Decal
@@ -166,7 +194,11 @@ Select `Decal`(`D`) tool from toolbar. Press `left mouse button` / `pen` to appl
 - `UV Scale`: Scale the coords for currently painted material.
 - `UV Rotate`: Rotate the coords for currently painted material.
 - `Opacity`: Overall opacity of the decal.
+- `Blending`: Blending mode used for applying decal.
 - `Mask`: Apply shape mask to the decal.
+- `X-Ray`: Apply decal through mesh faces.
+- `Mirror`: Mirror decal horizontally in screen-space.
+- `Symmetry`: Mirror decal on the X, Y and/or Z axis.
 
 #### Text
 
@@ -178,8 +210,12 @@ Select `Text`(`T`) tool from toolbar. Press `left mouse button` / `pen` to apply
 - `UV Scale`: Scale the coords for currently painted material.
 - `UV Rotate`: Rotate the coords for currently painted material.
 - `Opacity`: Overall opacity of the text.
+- `Blending`: Blending mode used for applying text.
 - `Font`: Select which font to apply.
 - `Text`: Type a text to apply.
+- `X-Ray`: Apply text through mesh faces.
+- `Mirror`: Mirror text horizontally in screen-space.
+- `Symmetry`: Mirror text on the X, Y and/or Z axis.
 
 #### Clone
 
@@ -189,6 +225,9 @@ Select `Clone`(`L`) tool from toolbar. Hold `ALT` to set clone source location. 
 
 - `Radius`: Brush size. (Hold `F` key and move the mouse / pen to the left / right.)
 - `Opacity`: Overall opacity of the brush stroke.
+- `Bias`: Stretch brush stroke on the uv map to prevent seams.
+- `Blending`: Blending mode used for painting.
+- `X-Ray`: Paint through mesh faces.
 
 #### Blur
 
@@ -198,6 +237,9 @@ Select `Blur`(`U`) tool from toolbar. Use `left mouse button` / `pen` to smudge 
 
 - `Radius`: Brush size. (Hold `F` key and move the mouse / pen to the left / right.)
 - `Opacity`: Overall opacity of the brush stroke.
+- `Bias`: Stretch brush stroke on the uv map to prevent seams.
+- `Blending`: Blending mode used for painting.
+- `X-Ray`: Paint through mesh faces.
 
 #### Particle
 
@@ -207,6 +249,8 @@ Select `Particle`(`P`) tool from toolbar. Use `left mouse button` / `pen` to app
 
 - `Radius`: Particle emitter size. (Hold `F` key and move the mouse / pen to the left / right.)
 - `Opacity`: Overall opacity of the emitted particle.
+- `Blending`: Blending mode used for applying particles.
+- `X-Ray`: Apply particles through mesh faces.
 
 #### Bake
 
@@ -214,9 +258,11 @@ Select `Particle`(`P`) tool from toolbar. Use `left mouse button` / `pen` to app
 
 Select `Bake`(`K`) tool from toolbar.
 
-**AO**
-
-Press `left mouse button` / `pen` to bake ambient occlusion. Strength, radius and offset can be configured. Afterwards, you can prevent the occlusion channel from being painted on by disabling it in the `Paint Maps` panel.
+- `AO`: Press `left mouse button` / `pen` to bake ambient occlusion into the occlusion channel. `Strength`, `Radius` and `Offset` can be configured. Afterwards, you can prevent the occlusion channel from being painted on by disabling it in the [layers](http://armorpaint.org/manual/#/?id=layers) menu.
+- `Position`: Bake world-space positions into base color channel.
+- `TexCoord`: Bake mesh uv map into base color channel.
+- `Material ID`: Bake colored material IDs into base color channel.
+- `Normals (World)`: Bake world-space normals into base color channel.
 
 #### Color ID
 
@@ -251,41 +297,48 @@ To create a new layer, press `Layers tab - New`. Brush will paint onto the curre
 
 Right-click on the layer to expose layer operations:
 - Convert layer to `fill layer` or `paint layer`.
-- Create a `mask`.
+- Create a `White Mask` or `Blask Mask`.
 - `Merge` the layer down.
 - `Duplicate` the layer.
 - `Move` the layer up or down.
 - `Delete` layer.
 - Set which channels the layer should affect.
 
+Right-click on the mask to expose mask operations:
+- `Apply` mask to parent layer.
+- `Delete` mask.
+
 *Note: Operations for the base (first) layer are restricted.*
 
 #### 2D View
 
+![](img/f.jpg)
+
 Click `Layers tab - 2D View` to show the channels of the selected layer. The 2D View is updated immediately as you paint. In the top bar, you can select which channel to show or display UV map as a wireframe.
 
-The paint tools are also usable directly inside the `2D View`.
+- Paint tools are also usable directly inside the 2D view.
+- Press `Textures tab - 2D View` to show selected texture inside 2D view.
 
 #### Camera
 
 Set camera type and parameters in the status bar.
 
-- `Rotate` - rotate mesh around the origin
-- `Orbit` - rotate camera around the mesh
-- `Fly` - hold `right mouse button` and move camera freely using the `WASD` and `QE` keys
+- `Rotate` - Rotate mesh around the origin.
+- `Orbit` - Rotate camera around the mesh.
+- `Fly` - Hold `right mouse button` and move camera freely using the `WASD` and `QE` keys.
 
 Press `menu bar - View` to set specific camera viewpoint.
 
 #### Viewport
 
-- Set `Light` and `Environment` intensity
-- Set `Light Size`
-- Display specific channel in the viewport
-- Enable `Show Envmap` to draw environment map in the viewport
-- Drag and drop a `.hdr` file onto the viewport to change the environment map
-- Show `Wireframe` in the viewport
-- Show ruler `Grid` in the viewport
-- Show 3D `Compass` in the viewport
+- Set `Light` and `Environment` intensity.
+- Set `Light Size`.
+- Display specific channel in the viewport.
+- Enable `Show Envmap` to draw environment map in the viewport.
+- Drag and drop a `.hdr` file onto the viewport to change the environment map.
+- Show `Wireframe` in the viewport.
+- Show ruler `Grid` in the viewport.
+- Show 3D `Compass` in the viewport.
 
 <br/><br/><br/><br/><br/>
 
@@ -298,9 +351,9 @@ Press `menu bar - View` to set specific camera viewpoint.
 ![](img/e.jpg)
 
 Select workspace from the header bar:
-- `Paint`: Texture painting
-- `Scene`: Scene composition
-- `Material`: Node-based material creation
+- `Paint`: Texture painting.
+- `Scene`: Scene composition.
+- `Material`: Node-based material creation.
 
 <br/><br/><br/><br/><br/>
 
@@ -310,11 +363,23 @@ Select workspace from the header bar:
 
 # Preferences
 
+![](img/g.jpg)
+
+##### Interface
+
 - `UI Scale`: Scale up the user interface when running on high-resolution display.
 - `Layout`: Pin properties window to the left or right side.
 - `Theme`: Select `Dark` or `Light` theme. Theme can be tweaked by editing the `theme_dark.arm` file placed in the `/data` folder. A proper theme editor will be provided in the future.
+
+##### Usage
+
 - `Undo Steps`: Set the number of undo steps to preserve. Using less undo steps may improve performance when running on GPU with constrained memory.
-- `Pen Pressure`: When painting with a pen, pressure affects the radius of brush.
+
+##### Pen Pressure
+
+- `Brush Radius`: When painting with a pen, pressure affects the radius of brush.
+- `Brush Opacity`: Pressure affects the opacity of brush.
+- `Brush Hardness`: Pressure affects the hardness of brush.
 
 ##### Viewport Quality
 
