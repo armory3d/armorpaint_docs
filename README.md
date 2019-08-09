@@ -383,7 +383,7 @@ Select workspace from the header bar:
 ##### Usage
 
 - `Undo Steps`: Set the number of undo steps to preserve. Using less undo steps may improve performance when running on GPU with constrained memory.
-- `Paint Bias`: Stretch brush strokes on the uv map to prevent seams.
+- `Paint Bleed`: Stretch brush strokes on the uv map to prevent seams.
 - `3D cursor`: Enable topological warp for paint cursor with depth and angle rejection.
 
 ##### Pen Pressure
