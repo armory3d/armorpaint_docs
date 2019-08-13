@@ -18,7 +18,13 @@ ArmorPaint is a stand-alone software designed for physically-based texture paint
 
 Painting process in ArmorPaint runs on the GPU and the performance mainly depends on a graphics card. Minimum for 4K painting is an Intel HD4000 graphics card. For 16K painting, GTX 1060/6GB or better is recommended.
 
->See [Preferences](http://armorpaint.org/manual/#/?id=preferences) to tune performance
+>See [Preferences](http://armorpaint.org/manual/#/?id=preferences) to tune performance.
+
+#### Updating
+
+Latest builds can be downloaded through your [Gumroad Library](http://gumroad.com/library). Alternatively, use the original email sent by Gumroad to access the download page.
+
+>In ArmorPaint, press `Help - Check for Updates...` to check if newer build is available.
 
 <br/><br/><br/><br/><br/>
 
@@ -271,7 +277,7 @@ Select `Bake`(`K`) tool from toolbar. Press `left mouse button` / `pen` in viewp
 - `Material ID`: Bake colored material IDs.
 - `Object ID`: Bake colored object IDs.
 
-> Use `Curvature` baker to create dirt masks.
+> Use `Curvature` baker to create [dirt masks](https://armorpaint.org/manual/img/curvature.jpg).
 
 #### Color ID
 
@@ -301,7 +307,7 @@ Select `Picker`(`V`) tool from toolbar. Press `left mouse button` / `pen` to rea
 #### Layers
 
 To create a new layer, press `Layers tab - New`. Brush will paint onto the currently selected layer.
-- Layer can be parented to the specific object by setting the `Object` combo property.
+- Layer can be parented to the specific object by setting the `Object` combo property. This allows to utilize multiple UV maps per project - each object having it's individual UV map.
 - Reveal the layer properties by clicking the `+` sign to set layer `opacity`.
 
 Right-click on the layer to expose layer operations:
@@ -350,6 +356,13 @@ Press `menu bar - View` to set specific camera viewpoint.
 - Show `Wireframe` in the viewport.
 - Show 3D `Compass` in the viewport.
 
+#### Brush Mask
+
+To use image as a brush mask:
+- Press `Brushes tab - Nodes` to open node editor.
+- Drag and drop brush mask image into the node editor.
+- [Connect](https://armorpaint.org/manual/img/brush_mask.jpg) newly placed `Image Texture` node to the `Brush Output - Opacity` socket.
+
 <br/><br/><br/><br/><br/>
 
 
@@ -383,7 +396,7 @@ Select workspace from the header bar:
 ##### Usage
 
 - `Undo Steps`: Set the number of undo steps to preserve. Using less undo steps may improve performance when running on GPU with constrained memory.
-- `Paint Bleed`: Stretch brush strokes on the uv map to prevent seams.
+- `Paint Bleed (Bias)`: Stretch brush strokes on the uv map to prevent seams.
 - `3D cursor`: Enable topological warp for paint cursor with depth and angle rejection.
 
 ##### Pen Pressure
@@ -391,6 +404,8 @@ Select workspace from the header bar:
 - `Brush Radius`: When painting with a pen, pressure affects the radius of brush.
 - `Brush Opacity`: Pressure affects the opacity of brush.
 - `Brush Hardness`: Pressure affects the hardness of brush.
+
+>When using Wacom tablets on Windows, ensure `Use Windows Ink` option is enabled in [Wacom Tablet Properties](https://armorpaint.org/manual/img/wacom.png).
 
 ##### Viewport Quality
 
@@ -400,6 +415,8 @@ On faster GPUs:
 
 On slower GPUs:
 - Disable `SSAO` for improved performance.
+
+>To simulate [pixel-art like](https://armorpaint.org/manual/img/pixelart.png) painting, disable `Filter Textures` option and set `Super Sample` to `0.25x`.
 
 <br/><br/><br/><br/><br/>
 
