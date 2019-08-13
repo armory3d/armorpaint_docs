@@ -416,7 +416,7 @@ On faster GPUs:
 On slower GPUs:
 - Disable `SSAO` for improved performance.
 
->To simulate [pixel-art like](https://armorpaint.org/manual/img/pixelart.png) painting, disable `Filter Textures` option and set `Super Sample` to `0.25x`.
+>To simulate [pixel-art like](https://armorpaint.org/manual/img/pixelart.jpg) painting, disable `Filter Textures` option and set `Super Sample` to `0.25x`.
 
 <br/><br/><br/><br/><br/>
 
