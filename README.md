@@ -34,7 +34,7 @@ Latest builds can be downloaded through your [Gumroad Library](http://gumroad.co
 
 # Get Started
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0LrMx2mmWi0?rel=0" frameBorder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qNHeNetQNvE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 #### Windows
 
