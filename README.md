@@ -89,7 +89,7 @@ Click on the `Materials tab - Import` button to import materials from ArmorPaint
 
 #### Import Textures
 
-Drag and drop `.jpg`, `.png`, `.tga` or `.hdr` images into the node editor. This will import the image and place a new `Image` node onto the canvas.
+Drag and drop `.jpg`, `.png`, `.tga`, `.bmp`, `.gif`, `.psd`, or `.hdr` images into the node editor. This will import the image and place a new `Image` node onto the canvas.
 
 #### Export Textures
 
@@ -181,7 +181,6 @@ Select `Eraser`(`E`) tool from toolbar. Use `left mouse button` / `pen` to erase
 - `Radius`: Eraser size.
 - `Opacity`: Overall opacity of the eraser stroke.
 - `Hardness`: Fade opacity towards the eraser stroke edge.
-- `Blending`: Blending mode used for erasing.
 - `X-Ray`: Erase through mesh faces.
 - `Symmetry`: Mirror eraser strokes on the X, Y and/or Z axis.
 
@@ -239,6 +238,7 @@ Select `Clone`(`L`) tool from toolbar. Hold `ALT` to set clone source location. 
 - `Opacity`: Overall opacity of the brush stroke.
 - `Blending`: Blending mode used for painting.
 - `X-Ray`: Paint through mesh faces.
+- `Symmetry`: Mirror brush strokes on the X, Y and/or Z axis.
 
 #### Blur
 
@@ -250,6 +250,7 @@ Select `Blur`(`U`) tool from toolbar. Use `left mouse button` / `pen` to smudge 
 - `Opacity`: Overall opacity of the brush stroke.
 - `Blending`: Blending mode used for painting.
 - `X-Ray`: Paint through mesh faces.
+- `Symmetry`: Mirror brush strokes on the X, Y and/or Z axis.
 
 #### Particle *wip*
 
@@ -261,6 +262,7 @@ Select `Particle`(`P`) tool from toolbar. Use `left mouse button` / `pen` to app
 - `Opacity`: Overall opacity of the emitted particle.
 - `Blending`: Blending mode used for applying particles.
 - `X-Ray`: Apply particles through mesh faces.
+- `Symmetry`: Mirror particles on the X, Y and/or Z axis.
 
 #### Bake
 
@@ -268,7 +270,8 @@ Select `Particle`(`P`) tool from toolbar. Use `left mouse button` / `pen` to app
 
 Select `Bake`(`K`) tool from toolbar. Press `left mouse button` / `pen` in viewport to apply bake into the base color channel of active layer or mask.
 
-- `AO`: Bake ambient occlusion. `Strength`, `Radius` and `Offset` can be configured.
+- `AO (DXR)`: Bake ambient occlusion. `Strength`, `Radius` and `Offset` can be configured. This feature is powered by hardware accelerated ray-tracing using DXR and Direct3D12, available in an experimental `ArmorPaintDXR` build - see [details](https://github.com/armory3d/armorpaint/blob/master/Bundled/readme/readme_dxr.txt) on supported hardware.
+- To bake `Cavity`, use `AO` bake with small `Radius`.
 - `Curvature`: Bake mesh curvature. `Strength`, `Radius` and `Offset` can be configured.
 <!-- - `Normal (Tang)`: Bake normal map from high-poly mesh. -->
 - `Normal (World)`: Bake world-space normals encoded into (0-1) range.
@@ -289,7 +292,7 @@ Select `Color ID`(`C`) tool from toolbar. Drag and drop color-id texture onto th
 
 ![](img/tool_picker.png)
 
-Select `Picker`(`V`) tool from toolbar. Press `left mouse button` / `pen` to read material values from the surface. Base color, normal, occlusion, roughness and metallic values will be displayed in the header.
+Select `Picker`(`V`) tool from toolbar. Press `left mouse button` / `pen` in viewport to read material values from the surface. Base color, normal, occlusion, roughness and metallic values will be displayed in the header.
 
 - `Select Material`: When enabled, the material you pick from the mesh surface will also get auto-selected in the `Materials tab`.
 - `Mask`: When set to `Material`, all drawing operations will be restricted to the surface where picked material is painted.
@@ -355,6 +358,9 @@ Press `menu bar - View` to set specific camera viewpoint.
 - Drag and drop a `.hdr` file onto the viewport to change the environment map.
 - Show `Wireframe` in the viewport.
 - Show 3D `Compass` in the viewport.
+- Set camera clip distance with `Clip Start` and `Clip End`.
+- Enable `Texels` to visualize texture pixels in the viewport with a checker pattern.
+- Set `Displace` strength in the viewport.
 
 #### Brush Mask
 
@@ -405,7 +411,7 @@ Select workspace from the header bar:
 - `Brush Opacity`: Pressure affects the opacity of brush.
 - `Brush Hardness`: Pressure affects the hardness of brush.
 
->When using Wacom tablets on Windows, ensure `Use Windows Ink` option is enabled in [Wacom Tablet Properties](https://armorpaint.org/manual/img/wacom.png).
+>ArmorPaint uses `Windows Ink` API on Windows. `Windows Ink` is available on Windows 8 or newer. When using Wacom tablets on Windows, ensure `Use Windows Ink` option is enabled in [Wacom Tablet Properties](https://armorpaint.org/manual/img/wacom.png).
 
 ##### Viewport Quality
 
@@ -417,6 +423,10 @@ On slower GPUs:
 - Disable `SSAO` for improved performance.
 
 >To simulate [pixel-art like](https://armorpaint.org/manual/img/pixelart.jpg) painting, disable `Filter Textures` option and set `Super Sample` to `0.25x`.
+
+##### Keymap
+
+- Select an existing preset or redefine keyboard shortcuts.
 
 <br/><br/><br/><br/><br/>
 
