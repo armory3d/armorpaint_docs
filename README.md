@@ -284,7 +284,7 @@ Select `Particle`(`P`) tool from toolbar. Use `left mouse button` / `pen` to app
 
 ![](img/tool_bake.png)
 
-Select `Bake`(`K`) tool from toolbar. Press and hold `left mouse button` / `pen` in viewport to apply bake into the base color channel of active layer or mask.
+Select `Bake`(`K`) tool from toolbar. Pick bake mode, then press and hold `left mouse button` / `pen` in viewport to apply bake into the base color channel of active layer or mask. For ray-traced bake modes, multiple samples will get accumulated until the `left mouse button` / `pen` is released.
 
 >See [Baking](http://armorpaint.org/manual/#/?id=baking) to learn about bake modes.
 
@@ -317,7 +317,7 @@ Select `Picker`(`V`) tool from toolbar. Press `left mouse button` / `pen` in vie
 
 To create a new layer, press `Layers tab - New`. Brush will paint onto the currently selected layer.
 - Layer can be parented to the specific object by setting the `Object` combo property. This allows to utilize multiple UV maps per project - each object having it's individual UV map.
-- Reveal the layer properties by clicking the `+` sign to set layer `opacity`.
+- Reveal the layer properties by clicking the `+` sign to set layer `opacity`, `resolution` and `color` depth.
 
 Right-click on the layer to expose layer operations:
 - Convert layer to `fill layer` or `paint layer`.
@@ -325,6 +325,7 @@ Right-click on the layer to expose layer operations:
 - `Merge` the layer down.
 - `Duplicate` the layer.
 - `Move` the layer up or down.
+- `Export` selected layer.
 - `Delete` layer.
 - Set which channels the layer should affect.
 
@@ -334,7 +335,7 @@ Right-click on the mask to expose mask operations:
 
 >Operations for the base (first) layer are restricted.
 
->Drag textures from `Textures tab` into the viewport to create mask for active layer.
+>Drag textures from `Textures tab` into the viewport or `Layers` tab to create mask for active layer.
 
 #### 2D View
 
@@ -347,26 +348,42 @@ Click `Layers tab - 2D View` to show the channels of the selected layer. The 2D 
 
 #### Camera
 
-Set camera type and parameters in the status bar.
+Set camera parameters in `Menu bar - Camera`.
 
-- `Orbit` - Rotate camera around the mesh.
-- `Rotate` - Rotate mesh around the origin.
-- `Fly` - Hold `right mouse button` and move camera freely using the `WASD` and `QE` keys.
-
-Press `menu bar - View` to set specific camera viewpoint.
+- Set specific camera viewpoint.
+- Reset camera.
+- Set clipping values with `Clip Start` and `Clip End`.
+- Set field of view.
+- Set perspective or orthographic camera type.
+- Set camera mode:
+  - `Orbit` - Rotate camera around the mesh.
+  - `Rotate` - Rotate mesh around the origin.
+  - `Fly` - Hold `right mouse button` and move camera freely using the `WASD` and `QE` keys.
 
 #### Viewport
 
-- Set `Light` and `Environment` intensity.
+Set viewport parameters in `Menu bar - Viewport`.
+
+- Press `Import Envmap...` or drag and drop a `.hdr` file onto the viewport to change the environment map.
+- Enable `Distract Free` (`F11`) mode.
+- Set `Environment` and `Light` intensity.
 - Set `Light Size`.
-- Display specific channel in the viewport.
-- Enable `Show Envmap` to draw environment map in the viewport.
-- Drag and drop a `.hdr` file onto the viewport to change the environment map.
+- Set `Displace` strength applied by height channel in the viewport.
+- Enable `Split View` for side-by-side viewports.
+- Enable `Cull Backfaces` to skip drawing backward facing polygons.
+- Enable `Filter Textures` to apply linear filter when sampling textures references by material.
 - Show `Wireframe` in the viewport.
-- Show 3D `Compass` in the viewport.
-- Set camera clip distance with `Clip Start` and `Clip End`.
 - Enable `Texels` to visualize texture pixels in the viewport with a checker pattern.
-- Set `Displace` strength in the viewport.
+- Show 3D `Compass` in the viewport.
+- Enable `Envmap` to draw environment map in the viewport.
+- Set `Viewport Color` to draw when environment map is hidden.
+
+Use combo box below the viewport to set render mode:
+- Pick `Render` to draw viewport with applied lighting using the rasterizer.
+- Pick specific channel to visualize it with no applied lighting.
+- Pick `Path-Trace` to draw viewport with interactive path-tracer. (*[ArmorPaintDXR](https://github.com/armory3d/armorpaint/blob/master/Assets/readme/readme_dxr.txt) builds*)
+
+> Hold `Shift` + `middle mouse button` to rotate light.
 
 #### Brush Mask
 
@@ -383,15 +400,44 @@ To use image as a brush mask:
 
 # Baking
 
-- `AO (DXR)`: Bake ambient occlusion. `Strength`, `Radius` and `Offset` can be configured. This feature is powered by hardware accelerated ray-tracing using DXR and Direct3D12, available in an experimental `ArmorPaintDXR` build - see [details](https://github.com/armory3d/armorpaint/blob/master/Bundled/readme/readme_dxr.txt) on supported hardware.
-- To bake `Cavity`, use `AO` bake with small `Radius`.
+![](img/i.jpg)
+
+Select [Bake tool](http://armorpaint.org/manual/#/?id=bake) from toolbar to perform baking.
+
+- `AO (DXR)`: Bake ambient occlusion. `Strength`, `Radius` and `Offset` can be configured.
+<br/><img src="img/bake/a.jpg" width="200px"/>
+
+
 - `Curvature`: Bake mesh curvature. `Strength`, `Radius` and `Offset` can be configured.
-<!-- - `Normal (Tang)`: Bake normal map from high-poly mesh. -->
-- `Normal (World)`: Bake world-space normals encoded into (0-1) range.
-- `Position`: Bake world-space positions encoded into (0-1) range.
+<br/><img src="img/bake/b.jpg" width="200px"/>
+
+
+- `Lightmap (DXR)`: Bake irradiance from the environment.
+<br/><img src="img/bake/e.jpg" width="200px"/>
+
+
+- `Bent Normal (DXR)`: Bake the normals indicating the least occluded direction for a point.
+<br/><img src="img/bake/c.jpg" width="200px"/>
+
+
+- `Thickness (DXR)`: Bake mesh thickness. Works similar to AO baker, but uses flipped normals.
+<br/><img src="img/bake/d.jpg" width="200px"/>
+
+
+- `Normal`: Bake normal map from high-poly mesh.
+- `Normal (Object)`: Bake object-space normals encoded into (0-1) range.
+- `Height`: Bake height map from high-poly mesh.
+- `Derivative`: Bake derivative normals from high-poly mesh. *wip*
+- `Position`: Bake object-space positions encoded into (0-1) range.
 - `TexCoord`: Bake mesh uv map.
 - `Material ID`: Bake colored material IDs.
 - `Object ID`: Bake colored object IDs.
+
+
+
+> *DXR* - This feature is powered by hardware accelerated ray-tracing using DXR and Direct3D12, available in experimental [ArmorPaintDXR](https://github.com/armory3d/armorpaint/blob/master/Assets/readme/readme_dxr.txt) builds.
+
+> Use `AO` baker with small `Radius` to bake `Cavity`.
 
 > Use `Curvature` baker to create [dirt masks](https://armorpaint.org/manual/img/curvature.jpg).
 
@@ -405,7 +451,7 @@ To use image as a brush mask:
 
 ![](img/e.jpg)
 
-Select workspace from the header bar:
+Select workspace tab from the header bar:
 - `Paint`: Texture painting, material composition.
 - `Scene`: Scene composition. *wip*
 
