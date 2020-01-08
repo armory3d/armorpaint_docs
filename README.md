@@ -385,6 +385,8 @@ Use combo box below the viewport to set render mode:
 
 > Hold `Shift` + `middle mouse button` to rotate light.
 
+> To simulate [pixel-art like](https://armorpaint.org/manual/img/pixelart.jpg) painting, disable `Filter Textures` option and set `Super Sample` in preferences to `0.25x`.
+
 #### Brush Mask
 
 To use image as a brush mask:
@@ -465,40 +467,44 @@ Select workspace tab from the header bar:
 
 ![](img/g.jpg)
 
-##### Interface
+Click `Menu bar - Edit - Preferences...` to show the preferences window.
 
-- `UI Scale`: Scale up the user interface when running on high-resolution display.
-- `Layout`: Pin properties window to the left or right side.
-- `Theme`: Select `Dark` or `Light` theme. Theme can be tweaked by editing the `theme_light.arm` file placed in the `/data` folder. A proper theme editor will be provided in the future.
+#### Interface
 
-##### Usage
+- `UI Scale`: Scale up the user interface when running on high-resolution display. By default, 2X scale is applied during the first startup for high-resolution displays.
+- `Theme`: Select `Dark` or `Light` theme. Theme can be tweaked by enabling the `theme_editor` plugin. New themes can be placed into the `ArmorPaint/data/themes` folder.
+- `Native File Browser`: Use file dialogs provided by the operating system when browsing for files.
+- Click `Restore` button to revert back to default settings.
 
-- `Undo Steps`: Set the number of undo steps to preserve. Using less undo steps may improve performance when running on GPU with constrained memory.
-- `Paint Bleed (Bias)`: Stretch brush strokes on the uv map to prevent seams.
+#### Usage
+
+- `Undo Steps`: Set the number of undo steps to keep. Using less undo steps may improve performance when running on GPU with constrained memory.
+- `Paint Bleed`: Stretch brush strokes on the uv map to prevent seams.
+- `Dilate Radius`: Stretch bake result on the uv map to prevent seams.
 - `3D cursor`: Enable topological warp for paint cursor with depth and angle rejection.
 
-##### Pen Pressure
+#### Pen
 
 - `Brush Radius`: When painting with a pen, pressure affects the radius of brush.
-- `Brush Opacity`: Pressure affects the opacity of brush.
 - `Brush Hardness`: Pressure affects the hardness of brush.
+- `Brush Opacity`: Pressure affects the opacity of brush.
 
 >ArmorPaint uses `Windows Ink` API on Windows. `Windows Ink` is available on Windows 8 or newer. When using Wacom tablets on Windows, ensure `Use Windows Ink` option is enabled in [Wacom Tablet Properties](https://armorpaint.org/manual/img/wacom.png).
 
-##### Viewport Quality
+#### Viewport
 
 On faster GPUs:
 - Raise `Super Sample` to 2X/4X for improved anti-aliasing.
-- Enable `Voxel AO` for cone-traced ambient occlusion and shadows.
+- Enable `Voxel AO` for cone-traced ambient occlusion and shadows (non-dxr builds).
 
 On slower GPUs:
 - Disable `SSAO` for improved performance.
 
->To simulate [pixel-art like](https://armorpaint.org/manual/img/pixelart.jpg) painting, disable `Filter Textures` option and set `Super Sample` to `0.25x`.
+#### Keymap
 
-##### Keymap
-
-- Select an existing preset or redefine keyboard shortcuts.
+Select an existing preset or define custom keyboard shortcuts.
+- Use `left`, `middle`, `right` handles to reference mouse buttons / pen.
+- Use `+` character to reference multiple keys: ie. `ctrl+1`.
 
 <br/><br/><br/><br/><br/>
 
@@ -510,13 +516,24 @@ On slower GPUs:
 
 ![](img/h.jpg)
 
-To enable plugins, edit the `config.arm` file placed in the `/data` folder. A plugin filename can be entered into the `plugins` array. A proper plugin manager will be provided in the future.
+Press `Plugins tab - Manager` to open the plugin manager.
 
-Plugins are written in JavaScript or WebAssembly. For a minimal example, see the bundled [plugin_hello.js](https://github.com/armory3d/armorpaint/blob/master/Bundled/plugins/plugin_hello.js) and [plugin_rotate.js](https://github.com/armory3d/armorpaint/blob/master/Bundled/plugins/plugin_rotate.js) files located in the `/data` folder.
+- Click `Import` to install a new plugin from `.js`, `.wasm` or `.zip` file.
+- Click `New` to create a new hello-world plugin.
+- Enable desired plugins from the list.
+- Right-click onto plugin name to expose plugin operations:
+  - `Export` plugin file for distribution.
+  - `Edit` plugin in a text editor.
+  - `Delete` plugin.
+- Controls for enabled plugins are displayed in the `Plugins tab`.
+- Some plugins may not expose controls but add new import / export file formats.
 
-```json
-{
-	...
-	"plugins": ["plugin_hello.js"]
-}
-```
+#### Live-Link
+
+Unreal and Unity live-link plugins are currently in development:
+- [Unreal](https://github.com/armory3d/armorpaint_unreal)
+- [Unity](https://github.com/armory3d/armorpaint_unity)
+
+#### Plugin Development
+
+Plugins are written in `JavaScript` or `WebAssembly` (compiled from `C`, `Rust`, ..). For a minimal example, see the [bundled](https://github.com/armory3d/armorpaint/tree/master/Assets/plugins) `hello_world.js` file located in the `Armorpaint/data/plugins` folder. A plugin development guide will be provided soon.
