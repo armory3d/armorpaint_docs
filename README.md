@@ -12,7 +12,7 @@ ArmorPaint is a stand-alone software designed for physically-based texture paint
 
 # Download
 
-**Windows** and **Linux** is recommended. An unsigned **macOS** build is also provided. ArmorPaint is a portable application with no installation, just unpack and run.
+**Windows** and **Linux** is recommended. Experimental **macOS** and **Android** builds are also provided. ArmorPaint is a portable application with no installation, just unpack and run.
 
 >[Get ArmorPaint](http://armorpaint.org/download.html)
 
