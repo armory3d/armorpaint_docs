@@ -48,7 +48,11 @@ Unpack downloaded archive and run `ArmorPaint`. In some cases, you may need to o
 
 #### macOS
 
-*Experimental:* Unsigned app is provided. See `instructions.txt` file in the extracted folder.
+*Experimental:* See [instructions.txt](https://github.com/armory3d/armorpaint/blob/master/Assets/readme/readme_macos.txt) file in the extracted folder.
+
+#### Android
+
+*Experimental:* See [readme_android.txt](https://github.com/armory3d/armorpaint/blob/master/Assets/readme/readme_android.txt) file in the extracted folder.
 
 #### Controls
 
@@ -537,3 +541,5 @@ Unreal and Unity live-link plugins are currently in development:
 #### Plugin Development
 
 Plugins are written in `JavaScript` or `WebAssembly` (compiled from `C`, `Rust`, ..). For a minimal example, see the [bundled](https://github.com/armory3d/armorpaint/tree/master/Assets/plugins) `hello_world.js` file located in the `Armorpaint/data/plugins` folder. A plugin development guide will be provided soon.
+
+<br/><br/><br/><br/><br/>
