@@ -534,9 +534,10 @@ Press `Plugins tab - Manager` to open the plugin manager.
 
 #### Live-Link
 
-Unreal and Unity live-link plugins are currently in development:
+Live-link plugins are currently in development:
 - [Unreal](https://github.com/armory3d/armorpaint_unreal)
 - [Unity](https://github.com/armory3d/armorpaint_unity)
+- [Blender](https://github.com/PiloeGAO/Blender-ArmorPaintLiveLink) (created by Léo Depoix)
 
 #### Plugin Development
 
