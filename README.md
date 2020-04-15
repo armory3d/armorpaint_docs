@@ -550,8 +550,9 @@ Click `Menu bar - Edit - Preferences...` to show the preferences window.
 - `Undo Steps`: Set the number of undo steps to keep. Using less undo steps may improve performance when running on GPU with constrained memory.
 - `Paint Bleed`: Stretch brush strokes on the uv map to prevent seams.
 - `Dilate Radius`: Stretch bake result on the uv map to prevent seams.
-- `Live Brush Preview`: Show brush paint preview in the viewport and 2d view.
 - `3D Cursor`: Enable topological warp for paint cursor with depth and angle rejection.
+- `Live Brush Preview`: Show brush paint preview in the viewport and 2d view.
+<br/><a href="https://www.youtube.com/watch?v=O5ccQBbKc48" target="_blank"><img src="img/live_brush.jpg" width="200px"/></a>
 
 #### Pen
 
