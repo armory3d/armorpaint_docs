@@ -370,6 +370,15 @@ To use image as a brush mask:
 - By enabling the `Direction` value of the `Brush Output` node, painted strokes will follow the brush path. Decal and brush mask will be oriented to match the direction of a brush.
 <br/><a href="img/brush_directional.jpg" target="_blank"><img src="img/brush_directional.jpg" width="200px"/></a>
 
+#### Brush Stencil
+
+To use image as a brush stencil:
+- Drag and drop stencil image into the node editor.
+- Connect newly placed `Image Texture` node to the `Brush Output - Stencil` socket.
+- Hold `ctrl` (`stencil_transform`) key to show transform controls.
+- Hold `z` (`stencil_hide`) key to make stencil invisible while still taking effect.
+<br/><a href="img/brush_stencil.jpg" target="_blank"><img src="img/brush_stencil.jpg" width="200px"/></a>
+
 <br/><br/><br/><br/><br/>
 
 
