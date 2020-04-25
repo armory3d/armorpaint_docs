@@ -460,7 +460,7 @@ Set viewport render mode in `Menu bar - Mode`.
 #### Path Traced Viewport *wip*
 
 - Available in ArmorPaintDXR builds (see [requirements](https://github.com/armory3d/armorpaint/blob/master/Assets/readme/readme_dxr.txt)).
-- The renderer favors performance
+- The renderer favors performance.
 - Only selected layer gets displayed - this will be resolved in the future. *wip*
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uQb-LOJdYrE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
