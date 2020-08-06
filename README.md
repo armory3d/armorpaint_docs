@@ -445,15 +445,25 @@ Set viewport parameters in `Menu bar - Viewport`.
 - Enable `Envmap` to draw environment map in the viewport.
 - Set `Viewport Color` to draw when environment map is hidden.
 
+> Hold `Shift` + `middle mouse button` to rotate light.
+
+> To simulate pixel-art like painting, disable `Filter Textures` option and set `Super Sample` in preferences to `0.25x`.
+> <br/><a href="img/pixelart.jpg" target="_blank"><img src="img/pixelart.jpg" width="200px"/></a>
+
+#### Viewport Mode
+
 Set viewport render mode in `Menu bar - Mode`.
 - Pick `Lit` to draw viewport with applied lighting using the rasterizer.
 - Pick specific channel to visualize it with no applied lighting.
 - Pick `Path Traced` to draw viewport with interactive path-tracer. (*[ArmorPaintDXR](https://github.com/armory3d/armorpaint/blob/master/Assets/readme/readme_dxr.txt) builds*)
 
-> Hold `Shift` + `middle mouse button` to rotate light.
+#### Path Traced Viewport *wip*
 
-> To simulate pixel-art like painting, disable `Filter Textures` option and set `Super Sample` in preferences to `0.25x`.
-> <br/><a href="img/pixelart.jpg" target="_blank"><img src="img/pixelart.jpg" width="200px"/></a>
+- Available in ArmorPaintDXR builds (see [requirements](https://github.com/armory3d/armorpaint/blob/master/Assets/readme/readme_dxr.txt)).
+- The renderer favors performance.
+- Only selected layer gets displayed - this will be resolved in the future. *wip*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uQb-LOJdYrE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 #### Camera
 
