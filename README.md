@@ -160,7 +160,7 @@ Click on the `Status bar - Browser tab` to activate the built-in asset browser.
 
 #### Brush
 
-![](img/tool_draw.png)
+![](img/tool_brush.png)
 
 Select `Brush`(`B`) tool from toolbar. Configure brush parameters in the header. Use `left mouse button` / `pen` to paint strokes using the selected material.
 
