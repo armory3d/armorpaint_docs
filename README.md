@@ -527,6 +527,7 @@ Select [Bake tool](http://armorpaint.org/manual/#/?id=bake) from toolbar to perf
 
 
 > *DXR* - This feature is powered by hardware accelerated ray-tracing using DXR and Direct3D12, available in experimental [ArmorPaintDXR](https://github.com/armory3d/armorpaint/blob/master/Assets/readme/readme_dxr.txt) builds.
+
 > *VKRT* - This feature is powered by hardware accelerated ray-tracing using VKRT and Vulkan, available in experimental [ArmorPaintVKRT](https://github.com/armory3d/armorpaint/blob/master/Assets/readme/readme_vkrt.txt) builds.
 
 > Use `AO` baker with small `Radius` to bake `Cavity`.
