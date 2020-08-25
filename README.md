@@ -48,11 +48,15 @@ Unpack downloaded archive and run `ArmorPaint`. In some cases, you may need to o
 
 #### macOS
 
-*Experimental:* Right-click on `ArmorPaint.app` and press `Open`. See [instructions.txt](https://github.com/armory3d/armorpaint/blob/master/Assets/readme/readme_macos.txt) file in the extracted folder.
+Unpack downloaded archive and run `ArmorPaint.app`.
 
 #### Android
 
-*Experimental:* See [readme_android.txt](https://github.com/armory3d/armorpaint/blob/master/Assets/readme/readme_android.txt) file in the extracted folder.
+*Experimental:* Unpack downloaded archive and see [readme_android.txt](https://github.com/armory3d/armorpaint/blob/master/Assets/readme/readme_android.txt). `ArmorPaint.apk` file is provided.
+
+#### iPadOS
+
+*In development.*
 
 #### Controls
 
@@ -455,11 +459,11 @@ Set viewport parameters in `Menu bar - Viewport`.
 Set viewport render mode in `Menu bar - Mode`.
 - Pick `Lit` to draw viewport with applied lighting using the rasterizer.
 - Pick specific channel to visualize it with no applied lighting.
-- Pick `Path Traced` to draw viewport with interactive path-tracer. (*[ArmorPaintDXR](https://github.com/armory3d/armorpaint/blob/master/Assets/readme/readme_dxr.txt) builds*)
+- Pick `Path Traced` to draw viewport with interactive path-tracer. (*[ArmorPaintDXR](https://github.com/armory3d/armorpaint/blob/master/Assets/readme/readme_dxr.txt) and [ArmorPaintVKRT](https://github.com/armory3d/armorpaint/blob/master/Assets/readme/readme_vkrt.txt) builds*)
 
 #### Path Traced Viewport *wip*
 
-- Available in ArmorPaintDXR builds (see [requirements](https://github.com/armory3d/armorpaint/blob/master/Assets/readme/readme_dxr.txt)).
+- Available in ArmorPaintDXR and ArmorPaintVKRT builds (see [dxr requirements](https://github.com/armory3d/armorpaint/blob/master/Assets/readme/readme_dxr.txt) and [vkrt requirements](https://github.com/armory3d/armorpaint/blob/master/Assets/readme/readme_vkrt.txt)).
 - The renderer favors performance.
 - Only selected layer gets displayed - this will be resolved in the future. *wip*
 
@@ -490,7 +494,7 @@ Set camera parameters in `Menu bar - Camera`.
 
 Select [Bake tool](http://armorpaint.org/manual/#/?id=bake) from toolbar to perform baking.
 
-- `AO (DXR)`: Bake ambient occlusion. `Strength`, `Radius` and `Offset` can be configured.
+- `AO (DXR, VKRT)`: Bake ambient occlusion. `Strength`, `Radius` and `Offset` can be configured.
 <br/><a href="img/bake/a.jpg" target="_blank"><img src="img/bake/a.jpg" width="200px"/></a>
 
 
@@ -498,15 +502,15 @@ Select [Bake tool](http://armorpaint.org/manual/#/?id=bake) from toolbar to perf
 <br/><a href="img/bake/b.jpg" target="_blank"><img src="img/bake/b.jpg" width="200px"/></a>
 
 
-- `Lightmap (DXR)`: Bake irradiance from the environment.
+- `Lightmap (DXR, VKRT)`: Bake irradiance from the environment.
 <br/><a href="img/bake/e.jpg" target="_blank"><img src="img/bake/e.jpg" width="200px"/></a>
 
 
-- `Bent Normal (DXR)`: Bake the normals indicating the least occluded direction for a point.
+- `Bent Normal (DXR, VKRT)`: Bake the normals indicating the least occluded direction for a point.
 <br/><a href="img/bake/c.jpg" target="_blank"><img src="img/bake/c.jpg" width="200px"/></a>
 
 
-- `Thickness (DXR)`: Bake mesh thickness. Works similar to AO baker, but uses flipped normals.
+- `Thickness (DXR, VKRT)`: Bake mesh thickness. Works similar to AO baker, but uses flipped normals.
 <br/><a href="img/bake/d.jpg" target="_blank"><img src="img/bake/d.jpg" width="200px"/></a>
 
 
@@ -523,6 +527,7 @@ Select [Bake tool](http://armorpaint.org/manual/#/?id=bake) from toolbar to perf
 
 
 > *DXR* - This feature is powered by hardware accelerated ray-tracing using DXR and Direct3D12, available in experimental [ArmorPaintDXR](https://github.com/armory3d/armorpaint/blob/master/Assets/readme/readme_dxr.txt) builds.
+> *VKRT* - This feature is powered by hardware accelerated ray-tracing using VKRT and Vulkan, available in experimental [ArmorPaintVKRT](https://github.com/armory3d/armorpaint/blob/master/Assets/readme/readme_vkrt.txt) builds.
 
 > Use `AO` baker with small `Radius` to bake `Cavity`.
 
@@ -589,7 +594,7 @@ Click `Menu bar - Edit - Preferences...` to show the preferences window.
 
 On faster GPUs:
 - Raise `Super Sample` to 2X/4X for improved anti-aliasing.
-- Enable `Voxel AO` for cone-traced ambient occlusion and shadows (non-dxr builds).
+- Enable `Voxel AO` for cone-traced ambient occlusion and shadows (non dxr / vkrt builds).
 
 On slower GPUs:
 - Disable `SSAO (screen-space ambient occlusion)` for improved performance.
