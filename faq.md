@@ -17,3 +17,7 @@ Simple meshes can be unwrapped directly in ArmorPaint via the `uv_unwrap` plugin
 #### Black spots appear on the imported mesh
 
 Make sure all mesh faces are present on the UV map.
+
+#### Importing geometry with non-convex polygons
+
+Triangulate the mesh before importing it to ArmorPaint.
