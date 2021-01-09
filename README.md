@@ -591,7 +591,7 @@ Click `Menu bar - Edit - Preferences...` to show the preferences window.
 
 > When using a Wacom tablet on Windows, ensure `Use Windows Ink` option is enabled in [Wacom Tablet Properties](https://armorpaint.org/manual/img/wacom.png).
 
-> When using a Wacom tablet on Windows, you can rotate the viewport by assigning `Alt` + `Left click` modifier onto pen button in [Wacom Tablet Properties](https://armorpaint.org/manual/img/wacom2.png).
+> When using a Wacom tablet on Windows, you can rotate the viewport by assigning `Alt` + `Left click` modifier onto pen button in [Wacom Tablet Properties](https://armorpaint.org/manual/img/wacom_button.png).
 
 > Pen pressure is expected to work on Windows, Linux, macOS, Android and iOS.
 
