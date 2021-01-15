@@ -14,17 +14,17 @@ ArmorPaint is a stand-alone software designed for physically-based texture paint
 
 **Windows** and **Linux** is recommended. Experimental **macOS** and **Android** builds are also provided. ArmorPaint is a portable application with no installation, just unpack and run.
 
-> [Get ArmorPaint](http://armorpaint.org/download.html)
+> [Get ArmorPaint](https://armorpaint.org/download.html)
 
 #### Requirements
 
 Painting process in ArmorPaint runs on the GPU and the performance mainly depends on a graphics card. Minimum for 4K painting is an Intel HD4000 graphics card. For 16K painting, GTX 1060/6GB or better is recommended.
 
-> See [Preferences](http://armorpaint.org/manual/#/?id=preferences) to tune performance.
+> See [Preferences](https://armorpaint.org/manual/#/?id=preferences) to tune performance.
 
 #### Updating
 
-Latest builds can be downloaded through your [Gumroad Library](http://gumroad.com/library). Alternatively, use the original email sent by Gumroad to access the download page.
+Latest builds can be downloaded through your [Gumroad Library](https://gumroad.com/library). Alternatively, use the original email sent by Gumroad to access the download page.
 
 > In ArmorPaint, press `Help - Check for Updates...` to check if newer build is available.
 
@@ -278,7 +278,7 @@ Select `Particle`(`P`) tool from toolbar. Use `left mouse button` / `pen` to app
 
 Select `Bake`(`K`) tool from toolbar. Pick bake mode, then press and hold `left mouse button` / `pen` in viewport to apply bake into the base color channel of active layer or mask. For ray-traced bake modes, multiple samples will get accumulated until the `left mouse button` / `pen` is released.
 
-> See [Baking](http://armorpaint.org/manual/#/?id=baking) to learn about bake modes.
+> See [Baking](https://armorpaint.org/manual/#/?id=baking) to learn about bake modes.
 
 #### Color ID
 
@@ -321,7 +321,7 @@ Right-click onto material preview to expose material operations:
 
 > Drag and drop material into viewport or Layers tab to create a fill layer.
 
-> See [Import Materials](http://armorpaint.org/manual/#/?id=import-materials).
+> See [Import Materials](https://armorpaint.org/manual/#/?id=import-materials).
 
 > Implemented material nodes: `Attribute`, `Camera data`, `Layer`, `Layer Mask`, `Material`, `Fresnel`, `Geometry`, `Layer Weight`, `Object Info`, `RGB`, `Tangent`, `Texture Coord`, `UV Map`, `Value`, `Brick Texture`, `Checker Texture`, `Gradient Texture`, `Image Texture`, `Magic Texture`, `Musgrave Texture`, `Noise Texture`, `Voronoi Texture`, `Wave Texture`, `BrightContrast`, `Gamma`, `Blur (Image)`, `HueSatVal`, `Invert`, `MixRGB`, `Bump`, `Mapping`, `Normal`,  `Vector Curves`, `Color Ramp`, `Combine HSV`, `Combine RGB`, `Combine XYZ`, `Math`, `RGB to BW`, `Separate HSV`, `Separate RGB`, `Separate XYZ`, `Vector Math`.
 
@@ -492,7 +492,7 @@ Set camera parameters in `Menu bar - Camera`.
 
 ![](img/i.jpg)
 
-Select [Bake tool](http://armorpaint.org/manual/#/?id=bake) from toolbar to perform baking.
+Select [Bake tool](https://armorpaint.org/manual/#/?id=bake) from toolbar to perform baking.
 
 - `AO (DXR, VKRT)`: Bake ambient occlusion. `Strength`, `Radius` and `Offset` can be configured.
 <br/><a href="img/bake/a.jpg" target="_blank"><img src="img/bake/a.jpg" width="200px"/></a>
