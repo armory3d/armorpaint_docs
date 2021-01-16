@@ -563,7 +563,7 @@ Click `Menu bar - Edit - Preferences...` to show the preferences window.
 
 #### Interface
 
-- `Language`: Set localization.
+- `Language`: Set localization. See [currently available translations](https://github.com/armory3d/armorpaint/tree/master/Assets/locale).
 - `UI Scale`: Scale up the user interface when running on high-resolution display. By default, 2X scale is applied during the first startup for high-resolution displays.
 - `Theme`: Select `dark` or `light` theme. Theme can be tweaked by enabling the `theme_editor` plugin. New themes can be placed into the `ArmorPaint/data/themes` folder.
 - `Native File Browser`: Use file dialogs provided by the operating system when browsing for files.
