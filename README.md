@@ -321,6 +321,8 @@ Right-click onto material preview to expose material operations:
 
 > Drag and drop material into viewport or Layers tab to create a fill layer.
 
+> ArmorPaint material nodes mimick the Cycles nodes. See [Cycles nodes documentation](https://docs.blender.org/manual/en/latest/render/shader_nodes/index.html).
+
 > See [Import Materials](https://armorpaint.org/manual/#/?id=import-materials).
 
 > Implemented material nodes: `Attribute`, `Camera data`, `Layer`, `Layer Mask`, `Material`, `Fresnel`, `Geometry`, `Layer Weight`, `Object Info`, `RGB`, `Tangent`, `Texture Coord`, `UV Map`, `Value`, `Brick Texture`, `Checker Texture`, `Gradient Texture`, `Image Texture`, `Magic Texture`, `Musgrave Texture`, `Noise Texture`, `Voronoi Texture`, `Wave Texture`, `BrightContrast`, `Gamma`, `Blur (Image)`, `HueSatVal`, `Invert`, `MixRGB`, `Bump`, `Mapping`, `Normal`,  `Vector Curves`, `Color Ramp`, `Combine HSV`, `Combine RGB`, `Combine XYZ`, `Math`, `RGB to BW`, `Separate HSV`, `Separate RGB`, `Separate XYZ`, `Vector Math`.
