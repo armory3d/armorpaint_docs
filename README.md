@@ -1,6 +1,6 @@
 # Welcome
 
-*Version [0.8dev](https://github.com/armory3d/armorpaint_docs)*
+*Version [0.8](https://github.com/armory3d/armorpaint_docs)*
 
 ![](img/title.jpg)
 
