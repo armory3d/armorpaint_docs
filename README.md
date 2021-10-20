@@ -52,7 +52,7 @@ Unpack downloaded archive and run `ArmorPaint.app`.
 
 #### iPadOS
 
-*Experimental:* Available on the [AppStore]().
+*Experimental:* Available on the [AppStore](https://apps.apple.com/us/app/armorpaint/id1533967534).
 
 #### Android
 
