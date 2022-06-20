@@ -717,7 +717,7 @@ Live-link plugins are currently in development:
 
 #### Plugin Development
 
-Plugins are written in `JavaScript` or `WebAssembly` (compiled from `C`, `Rust`, ..). For a minimal example, see the [bundled](https://github.com/armory3d/armorpaint/tree/master/Assets/plugins) `hello_world.js` file located in the `Armorpaint/data/plugins` folder.
+Plugins are written in `JavaScript` or `WebAssembly` (compiled from `C`, `Rust`, ..). For a minimal example, see the [bundled](https://github.com/armory3d/armorpaint/tree/master/Assets/plugins) `hello_world.js` file located in the `ArmorPaint/data/plugins` folder.
 
 A [plugin development guide](https://github.com/armory3d/armorpaint/wiki/Plugins) will be provided soon.
 
